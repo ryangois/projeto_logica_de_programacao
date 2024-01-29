@@ -96,7 +96,7 @@ public class Agenda {
             System.out.println("Informe o número do telefone: ");
             Long numero = Long.parseLong(scanner.nextLine());
 
-            Telefone telefone = new Telefone(null, ddd, numero);
+            Telefone telefone = new Telefone(ddd, numero);
             contato.adicionarTelefone(telefone);
         }
     }
@@ -186,7 +186,7 @@ public class Agenda {
             System.out.println("Informe o número do telefone: ");
             Long numero = Long.parseLong(scanner.nextLine());
 
-            Telefone telefone = new Telefone(null, ddd, numero);
+            Telefone telefone = new Telefone(ddd, numero);
             novoContato.adicionarTelefone(telefone);
         }
 
