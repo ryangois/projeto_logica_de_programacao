@@ -12,7 +12,7 @@ public class AgendaManipulacao {
     private static final String NOME_ARQUIVO = "contatos.txt";
 
     public static void salvarEmArquivo(List<Contato> contatos) {
-        // Ordena a lista de contatos antes de salvar no arquivo
+        // Ordena a lista de contatos em ordem alfabetica
         contatos.sort(Contato::compareTo);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(NOME_ARQUIVO))) {
@@ -70,7 +70,7 @@ public class AgendaManipulacao {
                         String[] telefones = nomeSobrenomeTelefones[1].trim().split(" / ");
                         for (String telefoneStr : telefones) {
                             String[] dddNumero = telefoneStr.trim().split(" ");
-                            Telefone telefone = new Telefone(null, dddNumero[0].replace("(", "").replace(")", ""),
+                            Telefone telefone = new Telefone(dddNumero[0].replace("(", "").replace(")", ""),
                                     Long.parseLong(dddNumero[1]));
                             contato.getTelefones().add(telefone);
                         }

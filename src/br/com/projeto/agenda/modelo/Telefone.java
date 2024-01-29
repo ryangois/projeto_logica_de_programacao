@@ -1,22 +1,12 @@
 package br.com.projeto.agenda.modelo;
 
 public class Telefone {
-    private Long id;
     private String ddd;
     private Long numero;
 
-    public Telefone(Long id, String ddd, Long numero) {
-        this.id = id;
+    public Telefone(String ddd, Long numero) {
         this.ddd = ddd;
         this.numero = numero;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getDdd() {
