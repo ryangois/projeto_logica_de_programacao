@@ -48,6 +48,26 @@ public class Contato implements Comparable<Contato> {
         telefones.add(telefone);
     }
 
+    public boolean temMesmosTelefones(Contato outroContato) {
+        List<Telefone> telefonesOutroContato = outroContato.getTelefones();
+
+        if (telefones == null || telefonesOutroContato == null) {
+            return false;
+        }
+
+        if (telefones.size() != telefonesOutroContato.size()) {
+            return false;
+        }
+
+        for (Telefone telefone : telefones) {
+            if (telefonesOutroContato.stream().anyMatch(t -> t.equals(telefone))) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
